@@ -79,17 +79,18 @@ export default function Home({ products }) {
         <h2 className={indexStyles.MainTitle}>
           Tell your customers who you are.
         </h2>
+
         <article className={indexStyles.ProductsAndServices}>
           <section className={indexStyles.ProductHero}>
-            <div className={indexStyles.ProductDesc}>
+            <div className={indexStyles.ProductDescHero}>
               <h4>Flagship Product</h4>
               <p>Tell your customers about the product(s) you typically offer. They've come to you for a reason, now it's time to close the sale.</p>
             </div>
             <div className={indexStyles.ProductCardHero}>
-              <div className={indexStyles.ProductCardImg}>
+              <div className={indexStyles.ProductCardImgHero}>
                 <img src="https://via.placeholder.com/150" alt="" />
               </div>
-              <div className={indexStyles.ProductCardInfo}>
+              <div className={indexStyles.ProductCardInfoHero}>
                 <div>Product: {products[0].item}</div>
                 <div>Price: {products[0].price}</div>
                 <div>In stock: {products[0].qty}</div>
@@ -97,6 +98,7 @@ export default function Home({ products }) {
               </div>
             </div>
           </section>
+
           <section className={indexStyles.Product}>
             <div className={indexStyles.ProductDesc}>
               <h4>Standard Product</h4>
@@ -116,6 +118,7 @@ export default function Home({ products }) {
           </section>
         </article>
       </main>
+
       <footer>
         <h4>footer</h4>
       </footer>
