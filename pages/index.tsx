@@ -69,11 +69,13 @@ export default function Home({ products }) {
         <article>
           <h2>Products List:</h2>
           {products.map((product, key) =>
-            <div key={key}>
+            <section 
+              className={indexStyles.product}
+              key={key}>
               <div>name: {product.name}</div>
               <div>price: {product.price}</div>
               <div>qty: {product.qty}</div>
-            </div>
+            </section>
           )}
           <section>
             <h3>section</h3>
