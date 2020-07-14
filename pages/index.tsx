@@ -3,6 +3,12 @@ import db from '../pg_db/db';
 import Head from 'next/head';
 import Link from 'next/link';
 
+// ICONS
+import StoreIcon from "@material-ui/icons/Store";
+import LocalGroceryStoreIcon from '@material-ui/icons/LocalGroceryStore';
+import SearchIcon from '@material-ui/icons/Search';
+//
+
 export default function Home({ products }) {
 
   console.log(products);
@@ -22,6 +28,7 @@ export default function Home({ products }) {
       <Head>
         <title>Clerk</title>
       </Head>
+
       <nav className={indexStyles.Nav}>
         <ul className={indexStyles.NavLinks}>
           <Link href="/products">
@@ -43,19 +50,22 @@ export default function Home({ products }) {
                 type="text" />
               <button
                 className={indexStyles.NavSearchFormButton}>
-                Search
-            </button>
+                <SearchIcon
+                  aria-label="Search store" />
+              </button>
             </form>
           </li>
           <li className={indexStyles.NavCart}>
             <button
               onClick={openCart}
               className={indexStyles.NavCartButton}>
-              Cart
+              <LocalGroceryStoreIcon
+                aria-label="Your cart" />
             </button>
           </li>
         </ul>
       </nav>
+
       <header
         className={indexStyles.Header}>
         <div className={indexStyles.HeaderHL}>
@@ -64,21 +74,45 @@ export default function Home({ products }) {
             className={indexStyles.HeaderHLSignupLink}>Sign up now</a></Link>
         </div>
       </header>
-      <main
-        className={indexStyles.Main}>
-        <article>
-          <h2>Products List:</h2>
-          {products.map((product, key) =>
-            <section 
-              className={indexStyles.product}
-              key={key}>
-              <div>name: {product.name}</div>
-              <div>price: {product.price}</div>
-              <div>qty: {product.qty}</div>
-            </section>
-          )}
-          <section>
-            <h3>section</h3>
+
+      <main className={indexStyles.Main}>
+        <h2 className={indexStyles.MainTitle}>
+          Tell your customers who you are.
+        </h2>
+        <article className={indexStyles.ProductsAndServices}>
+          <section className={indexStyles.ProductHero}>
+            <div className={indexStyles.ProductDesc}>
+              <h4>Flagship Product</h4>
+              <p>Tell your customers about the product(s) you typically offer. They've come to you for a reason, now it's time to close the sale.</p>
+            </div>
+            <div className={indexStyles.ProductCardHero}>
+              <div className={indexStyles.ProductCardImg}>
+                <img src="https://via.placeholder.com/150" alt="" />
+              </div>
+              <div className={indexStyles.ProductCardInfo}>
+                <div>Product: {products[0].item}</div>
+                <div>Price: {products[0].price}</div>
+                <div>In stock: {products[0].qty}</div>
+                <Link href="/products"><a>More info</a></Link>
+              </div>
+            </div>
+          </section>
+          <section className={indexStyles.Product}>
+            <div className={indexStyles.ProductDesc}>
+              <h4>Standard Product</h4>
+              <p>Add more products to your landing page help your customer quickly find what they need.</p>
+            </div>
+            <div className={indexStyles.ProductCard}>
+              <div className={indexStyles.ProductCardImg}>
+                <img src="https://via.placeholder.com/150" alt="" />
+              </div>
+              <div className={indexStyles.ProductCardInfo}>
+                <div>Product: {products[1].item}</div>
+                <div>Price: {products[1].price}</div>
+                <div>In stock: {products[1].qty}</div>
+                <Link href="/products"><a>More info</a></Link>
+              </div>
+            </div>
           </section>
         </article>
       </main>

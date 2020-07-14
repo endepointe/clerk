@@ -45,6 +45,8 @@
     background: inherit;
     color: white;
     border: none;
+    display: flex;
+    align-items: center;
   }
   .Header {
     width: 100%;
@@ -68,6 +70,67 @@
   .HeaderHLSignupLink {
     color: white;
     align-self: flex-end;
+  }
+  .Main {
+    width: 100%;
+  }
+  .MainTitle {
+    margin: 2rem auto;
+    width: 100%;
+    text-align: center;
+  }
+  .ProductsAndServices {
+    width: 98%;
+    margin: 0 auto;
+    padding: 0;
+  }
+  .ProductHero {
+    margin: 1rem auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    z-index: 10;
+    /* offset-x, offset-y, blur-radius, spread-radius, color */
+    /* box-shadow: 0 0 0.6rem 0.1rem #CCC; */
+  }
+  .Product {
+    margin: 1rem auto;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .ProductDesc {
+    flex: 1 2;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 0 1rem;
+    box-shadow: 0 0 0.6rem 0.1rem #CCC;
+    margin-right: 2rem;
+  } 
+  .ProductCardHero {
+    flex: 0 1 280px;
+    padding: 0;
+box-shadow: 0 0 0.6rem 0.1rem #CCC;
+    /* margin-left: 3rem; */
+    /* margin-right: 1rem; */
+  }
+  .ProductCard {
+    flex: 0 1 180px;
+    padding: 0 1rem;
+    /* margin-left: 3rem; */
+    /* margin-right: 1rem; */
+  }
+  .ProductCardImg > img{
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: center;
+    background-position-y: center;
   }
 }
 @media(min-width: 400px) {
