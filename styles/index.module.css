@@ -30,6 +30,14 @@
   .NavSearchForm {
     display: flex;
   }
+  .NavSearchFormInput {
+    border-radius: 0.2rem;
+    border: 2px solid inherit;
+    outline: none;
+  }
+  .NavSearchFormInput:focus {
+    border: 2px solid #0070f3;
+  }
   .NavSearchFormButton,
   .NavCartButton {
     width: inherit;

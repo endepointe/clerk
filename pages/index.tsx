@@ -3,7 +3,9 @@ import db from '../pg_db/db';
 import Head from 'next/head';
 import Link from 'next/link';
 
-export default function Home() {
+export default function Home({ products }) {
+
+  console.log(products);
 
   const openCart = (e: any) => {
     e.preventDefault();
@@ -65,7 +67,14 @@ export default function Home() {
       <main
         className={indexStyles.Main}>
         <article>
-          <h2>article</h2>
+          <h2>Products List:</h2>
+          {products.map((product, key) =>
+            <div key={key}>
+              <div>name: {product.name}</div>
+              <div>price: {product.price}</div>
+              <div>qty: {product.qty}</div>
+            </div>
+          )}
           <section>
             <h3>section</h3>
           </section>
@@ -79,17 +88,12 @@ export default function Home() {
 }
 
 export async function getStaticProps() {
-  db.manyOrNone(`select * from products;`)
-    .then((res) => {
-      console.log(res);
-    })
-    .catch((err) => {
-      console.log(err);
-    });
+
+  const products = await db.manyOrNone(`select * from products;`);
 
   return {
     props: {
-      //
+      products,
     }
   }
 }
