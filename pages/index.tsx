@@ -7,14 +7,22 @@ import {
   useState,
 } from 'react';
 
+//REDUX
+import { useSelector, useDispatch} from 'react-redux';
+//
+
 // ICONS
 import StoreIcon from "@material-ui/icons/Store";
 import LocalGroceryStoreIcon from '@material-ui/icons/LocalGroceryStore';
 import SearchIcon from '@material-ui/icons/Search';
+import AddIcon from '@material-ui/icons/Add';
+import RemoveIcon from '@material-ui/icons/Remove';
+import ClearIcon from '@material-ui/icons/Clear';
 //
 
 export default function Home({ products }) {
 
+  const { count, increment, decrement, clear } = useCounter();
   const [year, setYear] = useState<string>('');
 
   console.log(products);
@@ -140,9 +148,54 @@ export default function Home({ products }) {
         <h4>footer</h4>
         <code>EndePointe</code>
         <p>&copy;{year}</p>
+        <div>
+          <p>Redux testing btns</p> 
+          <div>
+              <AddIcon 
+                onClick={increment}
+                component="button">Add</AddIcon>
+              <RemoveIcon
+                onClick={decrement}
+                component="button">Rem</RemoveIcon>
+              <ClearIcon
+                onClick={() => clear}
+                component="button">Clr</ClearIcon>
+              <button
+                onClick={count}
+                type="button">
+                Get Count
+              </button>
+          </div>
+        </div>
       </footer>
     </>
   )
+}
+
+const useCounter = () => {
+  const count = useSelector((state) => state.count);
+
+  const dispatch = useDispatch();
+
+  const increment = () => {
+    dispatch({
+      type: 'INCREMENT', 
+    });
+  }
+
+  const decrement = () => {
+    dispatch({
+      type: 'DECREMENT', 
+    });
+  }
+
+  const clear = () => {
+    dispatch({
+      type: 'CLEAR', 
+    });
+  }
+
+  return { count, increment, decrement, clear};
 }
 
 export async function getStaticProps() {
