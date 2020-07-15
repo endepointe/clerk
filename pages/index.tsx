@@ -2,6 +2,10 @@ import indexStyles from '../styles/index.module.css';
 import db from '../pg_db/db';
 import Head from 'next/head';
 import Link from 'next/link';
+import {
+  useEffect,
+  useState,
+} from 'react';
 
 // ICONS
 import StoreIcon from "@material-ui/icons/Store";
@@ -11,7 +15,13 @@ import SearchIcon from '@material-ui/icons/Search';
 
 export default function Home({ products }) {
 
+  const [year, setYear] = useState<string>('');
+
   console.log(products);
+  useEffect(() => {
+    let date: string = new Date().getFullYear().toString();
+    setYear(date);
+  })
 
   const openCart = (e: any) => {
     e.preventDefault();
@@ -55,6 +65,7 @@ export default function Home({ products }) {
               </button>
             </form>
           </li>
+
           <li className={indexStyles.NavCart}>
             <button
               onClick={openCart}
@@ -116,11 +127,19 @@ export default function Home({ products }) {
               </div>
             </div>
           </section>
+          <section className={indexStyles.Services}>
+            <div className={indexStyles.ServicesDesc}>
+              <h4>Services</h4>
+              <p>Place company details here.</p>
+            </div>
+          </section>
         </article>
       </main>
 
-      <footer>
+      <footer className={indexStyles.Footer}>
         <h4>footer</h4>
+        <code>EndePointe</code>
+        <p>&copy;{year}</p>
       </footer>
     </>
   )

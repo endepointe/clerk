@@ -1,5 +1,8 @@
 @media(min-width: 280px) {
   .Nav {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
     background-color: black;
     color: white;
     display: flex;
@@ -7,30 +10,45 @@
     flex-wrap: wrap;
   }
   .NavLinks {
-    flex: 0 1 1;
-    align-items: center;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
+    flex: 0 2;
+    margin: 0.2rem auto 0.2rem 0.2rem;
+    padding: 0;
+    align-items: flex-start;
+    display: flex;
   }
   .NavLink {
-    margin: 0 0.2rem;
+    flex: 1;
+    margin: 0 1rem;
+    text-align: center; 
   }
   .NavSearchAndCart {
-    flex: 0 0 1;
+    margin: 0.2rem 0.2rem 0.2rem auto;
+    padding: 0;
+    flex: 0 1;
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
-  .NavSearch,
+  .NavSearch {
+    flex: 2;
+    margin: 0 auto;
+    list-style: none;
+    display: flex;
+  }
   .NavCart {
     flex: 1;
-    margin: 0 0.6rem;
+    width: 100%;
+    margin: 0 auto;
     list-style: none;
+    display: flex;
   }
   .NavSearchForm {
+    margin: 0 auto;
+    flex: 1;
     display: flex;
   }
   .NavSearchFormInput {
+    flex: 1;
     border-radius: 0.2rem;
     border: 2px solid inherit;
     outline: none;
@@ -40,13 +58,17 @@
   }
   .NavSearchFormButton,
   .NavCartButton {
-    width: inherit;
-    height: inherit;
+    width: 1.8rem;
+    height: 1.8rem;
     background: inherit;
     color: white;
     border: none;
     display: flex;
     align-items: center;
+  }
+  .NavCartButton {
+    margin-left: auto;
+    margin-right: 0.8rem;
   }
   .Header {
     width: 100%;
@@ -54,6 +76,7 @@
     background-color: grey;
     display: flex;
     align-items: flex-end;
+    margin: 0 auto;
   }
   .HeaderHL {
     margin-bottom: 1.6rem;
@@ -74,33 +97,34 @@
   .Main {
     width: 100%;
     margin: 0 auto;
-    padding: 0;
   }
   .MainTitle {
     margin: 2rem auto;
-    padding: 0;
     width: 100%;
     text-align: center;
+    display: block;
   }
   .ProductsAndServices {
     width: 100%;
     margin: 0 auto;
-    padding: 0 1rem;
   }
   .ProductHero {
-    margin: 1rem auto;
+    width: 97%;
+    margin: 2rem auto;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
     z-index: 10;
     /* offset-x, offset-y, blur-radius, spread-radius, color */
-    /* box-shadow: 0 0 0.6rem 0.1rem #CCC; */
+    box-shadow: 0 0 0.6rem 0.1rem #CCC;
   }
   .Product {
+    width: 97%;
     margin: 1rem auto;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    box-shadow: 0 0 0.6rem 0.1rem #CCC;
   }
   .Product:nth-child(1n) {
     margin: 1rem auto;
@@ -110,42 +134,36 @@
     flex-wrap: wrap;
   }
   .ProductDescHero {
-    flex: 1;
+    flex: 0 2 300px;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-    padding: 0 1rem;
-    box-shadow: 0 0 0.6rem 0.1rem #CCC;
-    /* margin-right: 2rem; */
-    margin-left: auto;
+    /* box-shadow: 0 0 0.6rem 0.1rem #CCC; */
+    margin-right: 2rem;
+    margin-left: 2rem;
   }
   .ProductDesc {
-    flex: 1;
+    flex: 0 2 300px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-    padding: 0 1rem;
-    box-shadow: 0 0 0.6rem 0.1rem #CCC;
-    /* margin-left: 2rem; */
+    /* box-shadow: 0 0 0.6rem 0.1rem #CCC; */
+    margin-left: 2rem;
     margin-right: auto;
   } 
   .ProductCardHero {
-    flex: 1;
-    padding: 0;
-    box-shadow: 0 0 0.6rem 0.1rem #CCC;
+    flex: 0 1 280px;
+    /* box-shadow: 0 0 0.6rem 0.1rem #CCC; */
   }
   .ProductCard {
-    flex: 1;
-    padding: 0;
-    box-shadow: 0 0 0.6rem 0.1rem #CCC;
+    flex: 0 1 180px;
+    /* box-shadow: 0 0 0.6rem 0.1rem #CCC; */
   }
   .ProductCardImgHero > img{
     width: 100%;
-    margin: 0 auto;
-    padding: 0;
     background-repeat: no-repeat;
     background-size: cover;
     background-position-x: center;
@@ -153,12 +171,28 @@
   }
   .ProductCardImg > img{
     width: 100%;
-    margin: 0 auto;
-    padding: 0;
     background-repeat: no-repeat;
     background-size: cover;
     background-position-x: center;
     background-position-y: center;
+  }
+  .Services {
+    width: 97%;
+    margin: 0 auto;
+    padding: 0;
+    height: 16rem;
+    box-shadow: 0 0 0.6rem 0.1rem #CCC;
+  }
+  .ServicesDesc {
+    width: 100%;
+    margin: auto;
+    text-align: center;
+  }
+  .Footer {
+    width: 97%;
+    margin: 4rem auto 1rem auto;
+    text-align: center;
+    color: #0070f3;
   }
 }
 @media(min-width: 400px) {
