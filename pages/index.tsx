@@ -8,7 +8,7 @@ import {
 } from 'react';
 
 //REDUX
-import { useSelector, useDispatch} from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 //
 
 // ICONS
@@ -25,7 +25,6 @@ export default function Home({ products }) {
   const { count, increment, decrement, clear } = useCounter();
   const [year, setYear] = useState<string>('');
 
-  console.log(products);
   useEffect(() => {
     let date: string = new Date().getFullYear().toString();
     setYear(date);
@@ -149,22 +148,18 @@ export default function Home({ products }) {
         <code>EndePointe</code>
         <p>&copy;{year}</p>
         <div>
-          <p>Redux testing btns</p> 
+          <p>Redux testing btns</p>
+          <p>Count: {count}</p>
           <div>
-              <AddIcon 
-                onClick={increment}
-                component="button">Add</AddIcon>
-              <RemoveIcon
-                onClick={decrement}
-                component="button">Rem</RemoveIcon>
-              <ClearIcon
-                onClick={() => clear}
-                component="button">Clr</ClearIcon>
-              <button
-                onClick={count}
-                type="button">
-                Get Count
-              </button>
+            <AddIcon
+              onClick={increment}
+              component="button">Add</AddIcon>
+            <RemoveIcon
+              onClick={decrement}
+              component="button">Rem</RemoveIcon>
+            <ClearIcon
+              onClick={() => clear}
+              component="button">Clr</ClearIcon>
           </div>
         </div>
       </footer>
@@ -179,23 +174,23 @@ const useCounter = () => {
 
   const increment = () => {
     dispatch({
-      type: 'INCREMENT', 
+      type: 'INCREMENT',
     });
   }
 
   const decrement = () => {
     dispatch({
-      type: 'DECREMENT', 
+      type: 'DECREMENT',
     });
   }
 
   const clear = () => {
     dispatch({
-      type: 'CLEAR', 
+      type: 'CLEAR',
     });
   }
 
-  return { count, increment, decrement, clear};
+  return { count, increment, decrement, clear };
 }
 
 export async function getStaticProps() {

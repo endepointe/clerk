@@ -26,5 +26,20 @@
     "@types/node": "^14.0.23",
     "@types/react": "^16.9.43",
     "typescript": "^3.9.6"
-  }
+  },
+  "description": "clerk",
+  "main": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/endepointe/clerk.git"
+  },
+  "keywords": [
+    "clerk"
+  ],
+  "author": "endepointe",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/endepointe/clerk/issues"
+  },
+  "homepage": "https://github.com/endepointe/clerk#readme"
 }
