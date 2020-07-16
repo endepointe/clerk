@@ -3,9 +3,9 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "dev": "next dev -p 3001",
+    "dev": "next dev -p 4004",
     "build": "next build",
-    "start": "next start -p 3001"
+    "start": "next start -p 4004"
   },
   "dependencies": {
     "@material-ui/core": "^4.11.0",
