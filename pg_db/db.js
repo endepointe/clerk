@@ -15,7 +15,7 @@ const cn = {
   database: 'clerk',
   user: process.env.PSQLUSER,
   password: process.env.PSQLPASS,
-  max: 1 // use up to 30 connections
+  max: 2 // use up to 30 connections
 }
 
 const pgp = require('pg-promise')(initOptions);
