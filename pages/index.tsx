@@ -195,11 +195,11 @@ const useCounter = () => {
 
 export async function getStaticProps() {
 
-  const products = await db.manyOrNone(`select * from products;`);
+  // const products = await db.manyOrNone(`select * from products;`);
 
   return {
     props: {
-      products,
+      // products,
     }
   }
 }
