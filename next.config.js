@@ -1,7 +1,9 @@
+require('dotenv').config();
+
 module.exports = {
   env: {
-    PSQLUSER: 'postgres',
-    PSQLPASS: 'D1v34MyL1f3'
+    PSQLUSER: process.env.PSQLUSER,
+    PSQLPASS: process.env.PSQLPASS
   }
 }
 /*
