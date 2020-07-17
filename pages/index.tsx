@@ -151,15 +151,9 @@ export default function Home({ products }) {
           <p>Redux testing btns</p>
           <p>Count: {count}</p>
           <div>
-            <AddIcon
-              onClick={increment}
-              component="button">Add</AddIcon>
-            <RemoveIcon
-              onClick={decrement}
-              component="button">Rem</RemoveIcon>
-            <ClearIcon
-              onClick={() => clear}
-              component="button">Clr</ClearIcon>
+            <button onClick={increment}>Add</button>
+            <button onClick={decrement}>Del</button>
+            <button onClick={clear}>clear</button>
           </div>
         </div>
       </footer>
