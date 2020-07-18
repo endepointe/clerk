@@ -6,8 +6,7 @@ module.exports = {
     PSQLPASS: process.env.PSQLPASS
   }
 }
+
 /*
 https://coderrocketfuel.com/article/how-to-run-a-npm-start-script-with-pm2
 */
-
-//pm2 start --name=clerk npm -- start
